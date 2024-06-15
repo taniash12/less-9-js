@@ -37,6 +37,12 @@ function getUsers(page) {
       ul.appendChild(fragment);
 
       totalPages = responseData.total_pages;
+      if(currentPage === 1){
+        prevBtn.disabled = true;
+      }
+      if(currentPage === totalPages){
+        nextBtn.disabled = true;
+      }
     })
     .catch(function (error) {
       if (error === 404) {
